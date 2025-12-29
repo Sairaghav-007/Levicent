@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my-btn-class-39 {
+        border: none; display: inline-block; text-align: center; cursor: pointer; text-transform: uppercase; outline: none; overflow: hidden; position: relative; color: rgb(255, 255, 255); font-weight: 700; font-size: 1rem; background-color: rgb(34, 34, 34); padding: 1rem 3rem; margin-left: 5px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+        }
+
+        .my-btn-class-39:hover {
+        background: none;
+        }
+
+        .my-btn-class-39 span {
+        position: relative; z-index: 1;
+        }
+
+        .my-btn-class-39::after {
+        content: ""; position: absolute; left: 0px; top: 0px; height: 490%; width: 140%; background: rgb(120, 199, 210); transition: all 0.5s ease-in-out 0s; transform: translateX(-98%) translateY(-25%) rotate(45deg);
+        }
+
+        .my-btn-class-39:hover::after {
+        transform: translateX(-9%) translateY(-25%) rotate(45deg);
+        }
+
+        .my-btn-class-49 {
+            display: inline-block; background-color: transparent; font-family: sans-serif; font-size: 1rem; font-weight: 600; color: rgb(0, 0, 0); text-transform: uppercase; letter-spacing: 1px; height: 50px; line-height: 50px; margin-right: 25px; padding: 0px 50px; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0) rgb(0, 230, 246) rgb(0, 0, 0) rgb(0, 0, 0); border-image: initial; position: relative; transition: all 0.2s ease-in-out 0s; cursor: pointer;
+            }
+            
+            .my-btn-class-49::before {
+            content: ""; position: absolute; inset: 0px; width: 100%; height: 100%; background-color: rgb(255, 255, 255); z-index: -1;
+            }
+            
+            .my-btn-class-49::after {
+            content: ""; position: absolute; top: 0px; right: -1px; width: 1px; height: 50px; background-color: rgb(0, 230, 246); transform: rotate(-90deg); transform-origin: center center; z-index: 0; transition: width 0.3s ease-in-out 0s, transform 0.2s ease-in-out 0.3s, z-index 0.15s ease-in-out 0s;
+            }
+            
+            .my-btn-class-49:hover {
+            color: rgb(255, 255, 255); transition: all 0.25s ease-in-out 0s; border: none;
+            }
+            
+            .my-btn-class-49:hover::after {
+            z-index: -1; transform: rotate(0deg); width: 100%; transition: transform 0.2s ease-in-out 0s, width 0.3s ease-in-out 0.2s;
+            }
+            
+            .my-btn-class-42 {
+                transform-style: preserve-3d; transition: all 0.5s ease 0s; z-index: 2; min-width: 12.5rem; margin: 0.5rem auto; padding: 1rem 2rem; border: 0.25rem solid rgb(247, 3, 108); border-radius: 0.5rem; background-color: rgba(247, 3, 108, 0.25); color: rgb(247, 3, 108); font-size: 1rem; font-weight: 700; text-transform: uppercase; position: relative; cursor: pointer; text-align: center;
+                }
+                
+                .my-btn-class-42:hover {
+                transform: translateZ(120px) rotateY(-45deg) rotateX(15deg);
+                }
+                
+                .my-btn-class-42::after {
+                content: ""; position: absolute; height: 100%; width: 100%; border: 0.25rem solid transparent; inset: 0px; margin: auto; border-radius: inherit; transform-style: preserve-3d; transition: all 0.5s ease 0s;
+                }
+                
+                .my-btn-class-42::before {
+                content: ""; position: absolute; height: 100%; width: 100%; border: 0.25rem solid transparent; inset: 0px; margin: auto; border-radius: inherit; transform-style: preserve-3d; transition: all 0.5s ease 0s;
+                }
+                
+                .my-btn-class-42:hover::before {
+                border-color: rgb(247, 3, 108); transform: translateZ(40px);
+                }
+                
+                .my-btn-class-42:hover::after {
+                border-color: rgb(247, 3, 108); transform: translateZ(20px);
+                }
+                
+                .my-btn-class-42:active {
+                box-shadow: rgb(247, 3, 108) 0px 3px 7px; transform: translateY(2px);
+                }
+    </style>
+</head>
+<body>
+   
+<button class="my-btn-class-39"><span>Button</span></button>
+<button class="my-btn-class-49">Button </button>
+<button class="my-btn-class-42">Button </button>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

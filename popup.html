@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+    ================================
+        Best Viewed In Full Page
+    ================================
+*/
+
+/* Because I'm using the fixed position for modals, if the screen height is small then you would not be able to see a full modal that's why it's recommended that you see this pen in full-page and not on editor view. */
+
+/* defaults */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  --light: hsl(220, 50%, 90%);
+  --primary: hsl(255, 30%, 55%);
+  --focus: hsl(210, 90%, 50%);
+  --border-color: hsla(0, 0%, 100%, .2);
+  --global-background: hsl(220, 25%, 10%);
+  --background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+  --shadow-1: hsla(236, 50%, 50%, .3);
+  --shadow-2: hsla(236, 50%, 50%, .4);
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
+  color: hsl(220, 50%, 90%);
+  background: hsl(220, 25%, 10%);
+}
+
+a,
+a:link {
+  font-family: inherit;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+
+/* box */
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 4rem 2rem;
+}
+
+.box:not(:first-child) {
+  height: 45rem;
+}
+
+.box__title {
+  font-size: 10rem;
+  font-weight: normal;
+  letter-spacing: .8rem;
+  margin-bottom: 2.6rem;
+}
+
+.box__title::first-letter {
+  color: hsl(255, 30%, 55%);
+}
+
+.box__p,
+.box__info,
+.box__note {
+  font-size: 1.6rem;
+}
+
+.box__info {
+  margin-top: 6rem;
+}
+
+.box__note {
+  line-height: 2;
+}
+
+
+/* modal */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  /* --m-background is set as inline style */
+  background: #fff;
+}
+
+/* using :target */
+/*
+when users will click/enter button(link) browser will add a #id in a url and when that happens we'll show our users the modal that contains that id.
+*/
+.modal-container:target {
+  display: flex;
+}
+
+.modal {
+  width: 60rem;
+  padding: 4rem 2rem;
+  border-radius: .8rem;
+
+  color: hsl(220, 50%, 90%);
+  background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+  box-shadow: var(--m-shadow, .4rem .4rem 10.2rem .2rem) hsla(236, 50%, 50%, .3);
+  position: relative;
+
+  overflow: hidden;
+}
+
+.modal__title {
+  font-size: 3.2rem;
+}
+
+.modal__text {
+  padding: 0 4rem;
+  margin-top: 4rem;
+
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+.modal__btn {
+  margin-top: 4rem;
+  padding: 1rem 1.6rem;
+  border: 1px solid hsla(0, 0%, 100%, .2);
+  border-radius: 100rem;
+
+  color: inherit;
+  background: transparent;
+  font-size: 1.4rem;
+  font-family: inherit;
+  letter-spacing: .2rem;
+
+  transition: .2s;
+  cursor: pointer;
+}
+
+.modal__btn:nth-of-type(1) {
+  margin-right: 1rem;
+}
+
+.modal__btn:hover,
+.modal__btn:focus {
+  background: hsl(210, 90%, 50%);
+  border-color: vahsl(210, 90%, 50%);
+  transform: translateY(-.2rem);
+}
+
+
+/* link-... */
+.link-1 {
+  font-size: 1.8rem;
+
+  color: hsl(220, 50%, 90%);
+  background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+  box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, .3);
+  border-radius: 100rem;
+  padding: 1.4rem 3.2rem;
+
+  transition: .2s;
+}
+
+.link-1:hover,
+.link-1:focus {
+  transform: translateY(-.2rem);
+  box-shadow: 0 0 4.4rem .2rem hsla(236, 50%, 50%, .4);
+}
+
+.link-1:focus {
+  box-shadow:
+    0 0 4.4rem .2rem hsla(236, 50%, 50%, .4),
+    0 0 0 .4rem hsl(220, 25%, 10%),
+    0 0 0 .5rem hsl(210, 90%, 50%);
+}
+
+.link-2 {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid hsla(0, 0%, 100%, .2);
+  border-radius: 100rem;
+
+  color: inherit;
+  font-size: 2.2rem;
+
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: .2s;
+}
+
+.link-2::before {
+  content: '×';
+
+  transform: translateY(-.1rem);
+}
+
+.link-2:hover,
+.link-2:focus {
+  background: hsl(210, 90%, 50%);
+  border-color: hsl(210, 90%, 50%);
+  transform: translateY(-.2rem);
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 1000%, .6);
+  font-size: 1.6rem;
+}
+  </style>
+</head>
+<body>
+  
+<!-- modal 3 -->
+<div class="box">
+  <a href="#m3-o" class="link-1" id="m3-c">Modal 3</a>
+  <!-- <p class="box__info">With Background Full Opacity</p> -->
+
+  <div class="modal-container" id="m3-o" style="--m-background: hsl(220, 25%, 10%);">
+    <div class="modal" style="--m-shadow: 0 0 10rem 0">
+      <h1 class="modal__title">Modal 3 Title</h1>
+      <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta maiores libero minus obcaecati iste optio, eius labore repellendus.</p>
+      <!-- <button class="modal__btn" >Button &rarr;</button> -->
+    <a href="./blog.html" style="color: #fff;">  <button class="modal__btn">Learn More &rarr;</button></a>
+      <a href="#m3-c" class="link-2"></a>
+    </div>
+  </div>
+</div>
+<!-- /modal 3 -->
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levicent</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="" type="image/svg+xml">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./anibut.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+</head>
+<style>
+  .hero-title,.section-title {
+    background-image: url(https://th.bing.com/th/id/OIP.nr5mv1BreFnLFmivYEoA0wHaEK?w=274&h=180&c=7&r=0&o=5&pid=1.7);
+    background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  @keyframes morphing {
+    0% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      box-shadow :15px 15px 50px rgba(0,0,0,0.2);
+    }
+    25% { 
+      border-radius :58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50% {
+      border-radius :50% 40% 33% 67% / 55% 27% 73% 45%;
+      box-shadow :-10px -5px 50px rgba(0,0,0,0.2);
+    }
+    75% {
+      border-radius :33% 67% 58% 42% / 63% 68% 32% 37% ;  
+    }
+  }
+
+
+  /*
+    .logo {
+      background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          white 60px
+        ),
+        linear-gradient(
+          10deg,
+          royalblue,
+          #5768df,
+          #8164d7,
+          #aa60c8,
+          #cc60b3,
+          #e3689c,
+          #ed7889,
+          #ee8c7e,
+          #e99e7c,
+          #e4ac7f,
+          #e0b585,
+          burlywood
+        ); 
+      
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    
+      background-clip: text;
+      animation: stripe-text-animation 3s alternate infinite;
+    } */
+    
+    /* Stripe Text Animation */
+    @keyframes stripe-text-animation {
+      from {
+        background-position: 0 100px;
+      }
+    
+      to {
+        background-position: 300px 300px;
+      }
+    }
+
+
+    .btn-5 {
+      width: 130px;
+      height: 40px;
+      line-height: 42px;
+      padding: 0;
+      margin-top:10px;
+       margin-left:80px;
+      border: none;
+      border-radius:5px;
+      color:white;
+      background: rgb(241, 74, 44);
+    background: linear-gradient(0deg, rgb(27, 75, 233) 0%, rgb(106, 106, 207)00%);
+    }
+    .btn-5:hover {
+      color: #7173e4;
+      background: transparent;
+       box-shadow:none;
+    }
+    .btn-5:before,
+    .btn-5:after{
+      content:'';
+      position:absolute;
+      top:0;
+      right:0;
+      height:2px;
+      width:0;
+      background: #f0094a;
+      box-shadow:
+       -1px -1px 5px 0px #fff,
+       7px 7px 20px 0px #0003,
+       4px 4px 5px 0px #0002;
+      transition:400ms ease all;
+    }
+    .btn-5:after{
+      right:inherit;
+      top:inherit;
+      left:0;
+      bottom:0;
+    }
+    .btn-5:hover:before,
+    .btn-5:hover:after{
+      width:100%;
+      transition:800ms ease all;
+    }
+    /*popup */
+    
+
+   .tossing:hover {
+    animation-name: tossing;
+    -webkit-animation-name: tossing;
+    animation-duration: 2.5s;
+    -webkit-animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+  }
+  
+  @keyframes tossing {
+    0% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(4deg);
+    }
+    100% {
+      transform: rotate(-4deg);
+    }
+  }
+  
+  @-webkit-keyframes tossing {
+    0% {
+      -webkit-transform: rotate(-4deg);
+    }
+    50% {
+      -webkit-transform: rotate(4deg);
+    }
+    100% {
+      -webkit-transform: rotate(-4deg);
+    }
+  }
+
+
+  /* box */
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 4rem 2rem;
+}
+
+.box:not(:first-child) {
+  height: 45rem;
+}
+
+.box__title {
+  font-size: 10rem;
+  font-weight: normal;
+  letter-spacing: .8rem;
+  margin-bottom: 2.6rem;
+}
+
+.box__title::first-letter {
+  color: hsl(255, 30%, 55%);
+}
+
+.box__p,
+.box__info,
+.box__note {
+  font-size: 1.6rem;
+}
+
+.box__info {
+  margin-top: 6rem;
+}
+
+.box__note {
+  line-height: 2;
+}
+
+
+/* modal */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  /* --m-background is set as inline style */
+  background: #fff;
+}
+
+/* using :target */
+/*
+when users will click/enter button(link) browser will add a #id in a url and when that happens we'll show our users the modal that contains that id.
+*/
+.modal-container:target {
+  display: flex;
+}
+
+.modal {
+  width: 80rem;
+  padding: 4rem 2rem;
+  border-radius: .8rem;
+
+  color: hsl(220, 50%, 90%);
+  background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+  box-shadow: var(--m-shadow, .4rem .4rem 10.2rem .2rem) hsla(236, 50%, 50%, .3);
+  position: relative;
+
+  overflow: hidden;
+}
+
+.modal__title {
+  font-size: 3.2rem;
+}
+
+.modal__text {
+  padding: 0 4rem;
+  margin-top: 4rem;
+
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+.modal__btn {
+  margin-top: 4rem;
+  padding: 1rem 1.6rem;
+  border: 1px solid hsla(0, 0%, 100%, .2);
+  border-radius: 100rem;
+
+  color: inherit;
+  background: transparent;
+  font-size: 1.4rem;
+  font-family: inherit;
+  letter-spacing: .2rem;
+
+  transition: .2s;
+  cursor: pointer;
+}
+
+.modal__btn:nth-of-type(1) {
+  margin-right: 1rem;
+}
+
+.modal__btn:hover,
+.modal__btn:focus {
+  background: hsl(210, 90%, 50%);
+  border-color: vahsl(210, 90%, 50%);
+  transform: translateY(-.2rem);
+}
+
+
+/* link-... */
+.link-1 {
+  font-size: 1.8rem;
+
+  color: hsl(220, 50%, 90%);
+  background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+  box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, .3);
+  border-radius: 100rem;
+  padding: 1.4rem 3.2rem;
+
+  transition: .2s;
+}
+
+.link-1:hover,
+.link-1:focus {
+  transform: translateY(-.2rem);
+  box-shadow: 0 0 4.4rem .2rem hsla(236, 50%, 50%, .4);
+}
+
+.link-1:focus {
+  box-shadow:
+    0 0 4.4rem .2rem hsla(236, 50%, 50%, .4),
+    0 0 0 .4rem hsl(220, 25%, 10%),
+    0 0 0 .5rem hsl(210, 90%, 50%);
+}
+
+.link-2 {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid hsla(0, 0%, 100%, .2);
+  border-radius: 100rem;
+
+  color: inherit;
+  font-size: 2.2rem;
+
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: .2s;
+}
+
+.link-2::before {
+  content: '×';
+
+  transform: translateY(-.1rem);
+}
+
+.link-2:hover,
+.link-2:focus {
+  background: hsl(210, 90%, 50%);
+  border-color: hsl(210, 90%, 50%);
+  transform: translateY(-.2rem);
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 1000%, .6);
+  font-size: 1.6rem;
+}
+    
+  </style>
+  
+
+  <body id="top">
+
+    <!-- 
+      - #HEADER
+    -->
+  
+    <header class="header" data-header>
+      <div class="container">
+  
+        <a href="#" class="logo">Levicent</a>
+  
+  
+        <nav class="navbar container" data-navbar>
+          <ul class="navbar-list">
+  
+            <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
+
+            <li><a href="#about" class="navbar-link" data-nav-link>About Us</a></li>
+  
+            <li><a href="#service" class="navbar-link" data-nav-link>Services</a></li>
+
+            <li><a href="./portfolio.html" class="navbar-link" data-nav-link>Portfolio</a></li> 
+  
+            <li><a href="./blog/" class="navbar-link" data-nav-link>Blog</a></li>
+            
+            <li><a href="./technologies.html" class="navbar-link" data-nav-link>Technologies</a></li>
+  
+            <li><a href="#contact" class="navbar-link" data-nav-link>Contact Us</a></li>
+  
+            <li><a href="#" class="btn "><!--Get Started --> 
+              <button style="--content: 'Get Started';">
+                <div class="left"></div>
+                Get Started
+                <div class="right"></div>
+              </button></a></li>
+  
+          </ul>
+        </nav>
+        
+  
+        <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+          <ion-icon name="menu-outline" class="open"></ion-icon>
+          <ion-icon name="close-outline" class="close"></ion-icon>
+        </button>
+  
+      </div>
+    </header>
+  
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="hero">
+        <div class="container">
+
+          
+          <div class="hero-content">
+
+            <!-- LEGACY <p class="hero-subtitle">Levicent - Software Company</p>
+
+            <h1 class="h1 hero-title">We are available for Developing Softwares and Websites</h1>
+
+            <p class="hero-text">
+              Levicent is a state of the art Consulting and Solution Provider offering various services on the IT field as Software and Web Application Development.
+                </p>
+
+            <a href="#" class="btn btn-primary">Get Started</a> --> 
+            
+          
+           <!-- NEW --> 
+             <p class="hero-subtitle">Welcome , Glad to see you (again)  </p>
+
+            <h1 class="h1 hero-title">Elevate Your Business with Levicent </h1>
+  <h3 class="h3 hero-title"> Amplify your value to your customers. <br> Partner with us to innovate.<br></h3>
+  <!-- <a href="#">Contact us NOW ! </a></h3> --> 
+  
+  
+            <p class="hero-text">
+              Levicent is a state of the art &nbsp;  IT/Software Consulting and Solution Provider offering various services such as Web , Mobile, AI/ML , BI  Application Development.
+                </p>
+
+            <a href="#contact" class="btn btn-primary">Contact &nbsp; us &nbsp; NOW</a>
+            
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./readme-images/homepng.png" width="720" height="673" alt="hero banner" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+        <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          
+
+          <div class="about-banner img-holder" style="--width: 720; --height: 960;">
+            <img src="./assets/img/about.jpg" width="720" height="960" loading="lazy" alt="about banner"
+              class="img-cover">
+
+            <!-- <button class="play-btn" aria-label="Play video">
+              <ion-icon name="play" aria-hidden="true"></ion-icon>
+            </button> -->
+          </div>
+
+          <div class="about-content">
+
+            <h2 class="h2 section-title">About Us</h2>
+
+            <p class="section-text">
+              Levicent is a state of the art Consulting and Solution Provider offering various services on the IT field as Software and Web Application Development. Based in South India with both Western and Indian founders, our company is more than just another IT company. Our vision reaches beyond the scope of what we can acquire for ourselves. 
+            </p>
+
+            <h3 class="h3">Who We Are</h3>
+
+            <p class="section-text">
+              We are fueled by a desire to uplift our community of Tiruvannamalai and the inspirational mountain that is at its center, Arunachala. ...
+                  </p>
+
+            <h3 class="h3">Our Success</h3>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                <p class="section-text">
+                
+
+                          Empower local businesses with digital solutions for growth.
+                          Enhance skills and create job opportunities for the community.
+                  </p>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                <p class="section-text">
+                  It is a long established fact that a reader will be distracted by the readable content of a page when
+                  looking at its
+                  layout.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                <p class="section-text">
+                  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                  classical Latin
+                  literature.
+                </p>
+              </li>
+
+            </ul>
+
+            <h3 class="h3">Our Mission</h3>
+
+            <p class="section-text">
+              At Levicent, our mission is to leverage cutting-edge technology to empower businesses and individuals, fostering innovation and growth in our community and beyond. We are committed to delivering software and web solutions that drive success and to providing a better future for Tiruvannamalai and its people.
+              </p>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" id="service" aria-label="service">
+        <div class="container">
+
+          <h2 class="h2 section-title">Our Services</h2>
+
+          <p class="section-text">
+            Explore a spectrum of tailored services, from software development to IT consulting, designed to drive your digital success.
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-image: linear-gradient(19deg, #15c6ee 0%, #832faa 100%); 
+                border-radius :40% 70% 70% 40% / 30% 30% 70% 70% ;box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+                animation: morphing 10s infinite;
+                overflow: hidden">
+                  <!-- <ion-icon name="chatbox"></ion-icon> --><i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3 class="h3">
+                  <a href="#service" class="card-title">Website Development</a>
+                </h3>
+
+                <p class="card-text">
+                  We create tailor-made websites that align with your brand identity and business objectives. 
+                   
+                </p>
+                <button class="custom-btn btn-5" ><span><a href="./webdesigning.html">Read More</a></span></button>
+
+               
+
+               
+              </div>
+               
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-image: linear-gradient(19deg, #dd28b6 0%, #d6d328 100%); 
+                border-radius :40% 70% 70% 40% / 30% 30% 70% 70% ;box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+                animation: morphing 10s infinite;
+                overflow: hidden">
+                  <!-- <ion-icon name="desktop"></ion-icon> --><i class="fa-solid fa-desktop"></i>
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Software Development</a>
+                </h3>
+
+                <p class="card-text">
+                  Empower your business with custom software solutions designed exclusively for you.
+
+                </p>
+                <button class="custom-btn btn-5"><span><a href="./softwaredevelopment.html">Read More</a></span></button>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-image: linear-gradient(19deg, #d9f00f 0%, #525145 100%); 
+                border-radius :40% 70% 70% 40% / 30% 30% 70% 70% ;box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+                animation: morphing 10s infinite;
+                overflow: hidden">
+                <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">App Development</a>
+                </h3>
+
+                <p class="card-text">
+                  In the ever-evolving digital landscape, mobile applications are indispensable for
+                   reaching a wider audience.
+                </p>
+                <button class="custom-btn btn-5"><span><a href="#">Read More</a></span></button>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-image: linear-gradient(19deg, #d16b43 0%, #d6d328 100%); 
+                border-radius :40% 70% 70% 40% / 30% 30% 70% 70% ;box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+                animation: morphing 10s infinite;
+                overflow: hidden">
+                <i class="fa-solid fa-gears"></i>
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">SEO Optimization</a>
+                </h3>
+
+                <p class="card-text">
+                  Boost your online visibility and drive organic traffic to your website with our
+                   top-notch SEO services.
+                </p>
+                <button class="custom-btn btn-5"><span><a href="./seo.html">Read More</a></span></button>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-image: linear-gradient(19deg, #61bce0 0%, #A6FF96 100%); 
+                border-radius :40% 70% 70% 40% / 30% 30% 70% 70% ; box-shadow: 12px 12px 40px rgba(240, 237, 237, 0.2);
+                animation: morphing 10s infinite;
+                overflow: hidden">
+                  <!-- <ion-icon name="archive"></ion-icon> --><i class="fa-regular fa-lightbulb"></i>
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Digital Marketing</a>
+                </h3>
+
+                <p class="card-text">
+                  Stay ahead of the competition with our comprehensive digital marketing services.
+                   We create 
+                  
+                </p>
+                <button class="custom-btn btn-5"><span><a href="./digitalmarketing.html">Read More</a></span></button>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-image: linear-gradient(19deg, #FCE09B 0%, #B2533E 100%); 
+                border-radius :40% 70% 70% 40% / 30% 30% 70% 70% ;box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+                animation: morphing 10s infinite;
+                overflow: hidden">
+                <i class="fa-regular fa-pen-to-square"></i>
+                </div>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Content Writing</a>
+                </h3>
+
+                <p class="card-text">
+                  Compelling and engaging content is the cornerstone of a successful online presence.
+                   . 
+                   
+                </p>
+                <button class="custom-btn btn-5"><span><a href="./content-writing.html">Read More</a></span></button>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+         
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PROJECT
+      -->
+
+      <section class="section project" id="project" aria-label="project">
+        <div class="container">
+
+             
+
+          <h2 class="h2 section-title">Our Recent Projects</h2>
+
+          <p class="section-text">
+            At Levicent, we take pride in our commitment to excellence and innovation. Our 'Recent Projects' page showcases our latest endeavors, where we've harnessed cutting-edge technologies to deliver exceptional results for our clients.
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="./assets/images/project-1.jpg" width="510" height="700" loading="lazy"
+                    alt="Designing a better cinema experience" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">SURPLUS RECOVERY</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">RECOVERING YOUR FUNDS FOR YOU </a>
+                  </h3>
+                  <!-- https://thesurplusrecovery.com/ -->
+                  <a href="#m3-o"  id="m3-c" class="btn btn-primary">View Details</a>
+                 
+
+                </div>
+               
+
+              </div>
+              <!-- popup -->
+              <div class="modal-container" id="m3-o" style="--m-background: hsl(220, 25%, 10%);">
+                <div class="modal" style="--m-shadow: 0 0 10rem 0">
+                  <h1 class="modal__title">RECOVERING YOUR FUNDS FOR YOU</h1>
+                  <p class="modal__text">Welcome to Surplus Recovery, where our commitment to excellence and
+                     a history of remarkable achievements sets us apart. With a strong foundation of success,
+                      we have established ourselves as leaders in the field of tax sale surplus recovery.</p>
+                      <p class="modal__text"> Our founders, Josh F. and Steve M., bring a wealth of experience and expertise to our organization. Their combined knowledge and unwavering dedication have been instrumental in helping numerous individuals reclaim their tax sale surplus funds and achieve optimal financial returns.</p>
+                  <!-- <button class="modal__btn" >Button &rarr;</button> -->
+                <a href="https://thesurplusrecovery.com/" style="color: #fff;">  <button class="modal__btn">Learn More &rarr;</button></a>
+                  <a href="#m3-0" class="link-2"></a>
+                </div>
+              </div>
+             
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="./assets/images/surplus.png" width="510" height="700" loading="lazy"
+                    alt="Building design process within teams" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">MYCASECARE </p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Track Pain. <br> Change Lives </a>
+                  </h3>
+                  <!-- https://mycasecare.com -->
+                  <a href="#m4-o" class="btn btn-primary">View Details</a>
+
+                </div>
+
+              </div>
+               <!-- popup -->
+               <div class="modal-container" id="m4-o" style="--m-background: hsl(220, 25%, 10%);">
+                <div class="modal" style="--m-shadow: 0 0 10rem 0">
+                  <h1 class="modal__title">MYCASECARE</h1>
+                  <p class="modal__text">We believe that individuals who have experienced accidents
+                     should have the opportunity to concentrate on their recovery while optimizing their case value, which 
+                     can address both present and future pain and suffering. Achieving
+                     this objective requires enhanced and streamlined communication among all involved parties in a case.</p>
+                     <P class="modal__text">We are a team of technical entrepreneurs and industry experts who firmly believe in the power of applying technical solutions to solve problems and simplify life. We are focused on applying these technologies to the legal industry to help attorneys better serve their clients.</P>
+                  <!-- <button class="modal__btn" >Button &rarr;</button> -->
+                <a href="https://mycasecare.com " style="color: #fff;">  <button class="modal__btn">Learn More &rarr;</button></a>
+                  <a href="#m3-0" class="link-2"></a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="./assets/images/bpo.jpeg" width="480" height="700" loading="lazy"
+                    alt="How intercom brings play into their design process" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">Five Talent Accrete</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Business Process Outsourcing (BPO)</a>
+                  </h3>
+                  <!-- https://fivetalentglobal.com -->
+                  <a href="#m5-o" class="btn btn-primary">View Details</a>
+
+                </div>
+
+              </div>
+               <!-- popup -->
+               <div class="modal-container" id="m5-o" style="--m-background: hsl(220, 25%, 10%);">
+                <div class="modal" style="--m-shadow: 0 0 10rem 0">
+                  <h1 class="modal__title">Five Talent Accrete</h1>
+                  <p class="modal__text">We offer a variety of customized non-core services trusted by enterprises worldwide for our quality and commitment. Get a quote now and see how we can help you grow, by allowing your team to focus on what's truly important.</p>
+                   <P class="modal__text">We believe that customer service is the key to success, and they strive to provide the best possible service to their clients.</P>
+                  <!-- <button class="modal__btn" >Button &rarr;</button> -->
+                <a href="https://fivetalentglobal.com" style="color: #fff;">  <button class="modal__btn">Learn More &rarr;</button></a>
+                  <a href="#m3-0" class="link-2"></a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="./assets/images/sunshine_front.jpeg" width="510" height="700" loading="lazy"
+                    alt="Stuck with to-do list, I created a new app for" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">Sun Shine Guest House</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">A bright and happy place, very affordable, safe, clean, and relaxing.</a>
+                  </h3>
+                  <!-- https://sunshineguesthouseindia.com -->
+                  <a href="#m6-o" class="btn btn-primary">View Details</a>
+
+                </div>
+
+              </div>
+               <!-- popup -->
+               <div class="modal-container" id="m6-o" style="--m-background: hsl(220, 25%, 10%);">
+                <div class="modal" style="--m-shadow: 0 0 10rem 0">
+                  <h1 class="modal__title">Sun Shine Guest House</h1>
+                  <p class="modal__text">We offer a variety of customized non-core services trusted by enterprises worldwide for our quality and commitment. Get a quote now and see how we can help you grow, by allowing your team to focus on what's truly important</p>
+                   <P class="modal__text">We believe that customer service is the key to success, and they strive to provide the best possible service to their clients.</P>
+                  <!-- <button class="modal__btn" >Button &rarr;</button> -->
+                <a href="https://sunshineguesthouseindia.com" style="color: #fff;">  <button class="modal__btn">Learn More &rarr;</button></a>
+                  <a href="#m3-c" class="link-2"></a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="./assets/images/tablereservation.jpg" width="510" height="700" loading="lazy"
+                    alt="Examples of different types of sprints" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">The Dreaming Treee</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Restaurant Table Reservation Software</a>
+                  </h3>
+                  <!-- https://thedreamingtree.in/ -->
+                  <a href="#m7-o" class="btn btn-primary">View Details</a>
+
+                </div>
+
+              </div>
+               <!-- popup -->
+               <div class="modal-container" id="m7-o" style="--m-background: hsl(220, 25%, 10%);">
+                <div class="modal" style="--m-shadow: 0 0 10rem 0">
+                  <h1 class="modal__title">The Dreaming Treee</h1>
+                  <p class="modal__text">We offer a variety of customized non-core services trusted by enterprises worldwide for our quality and commitment. Get a quote now and see how we can help you grow, by allowing your team to focus on what's truly important.</p>
+                   <P class="modal__text">We believe that customer service is the key to success, and they strive to provide the best possible service to their clients.</P>
+                  <!-- <button class="modal__btn" >Button &rarr;</button> -->
+                <a href="https://thedreamingtree.in/" style="color: #fff;">  <button class="modal__btn">Learn More &rarr;</button></a>
+                  <a href="#m3-c" class="link-2"></a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="./assets/images/interior.jpg.crdownload" width="510" height="700" loading="lazy"
+                    alt="Redesigning the New York times app" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">Ravi Interior</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Interior Decorators </a>
+                  </h3>
+                  <!-- https://interiordecoratorstvm.com/ -->
+                  <a href="#m8-o" class="btn btn-primary">View Details</a>
+
+                </div>
+
+              </div>
+            </li>
+             <!-- popup -->
+             <div class="modal-container" id="m8-o" style="--m-background: hsl(220, 25%, 10%);">
+              <div class="modal" style="--m-shadow: 0 0 10rem 0">
+                <h1 class="modal__title">Ravi Interior</h1>
+                <p class="modal__text">Welcome to our Ravi interior Decorators firm, where excellence and innovation reign supreme. We bring your unique vision to life with our skilled team, blending creativity and expertise for captivating, functional interiors in residential and commercial spaces. Your design dreams, our reality.</p>
+                 <P class="modal__text">Welcome to our world of awe-inspiring Ravi interior Decorators services for your home. Our team of dedicated professionals is here to transform your living space into a haven of style, comfort, and functionality. Whether you're looking to revamp a single room or give your entire home a fresh, new look, we've got you covered.</P>
+                <!-- <button class="modal__btn" >Button &rarr;</button> -->
+              <a href="https://interiordecoratorstvm.com/" style="color: #fff;">  <button class="modal__btn">Learn More &rarr;</button></a>
+                <a href="#m3-c" class="link-2"></a>
+              </div>
+            </div>
+
+          </ul>
+ 
+
+        </div>
+        
+      </section>
+      
+
+
+
+
+
+    
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="section cta" aria-label="cta" style="background-image: url('./assets/images/cta-bg.jpg')">
+        <div class="container">
+
+          <p class="cta-subtitle">So What is Next?</p>
+
+          <h2 class="h2 section-title">Are You Ready? Let's innovate together !</h2>
+
+          <a href="#contact" class="btn btn-secondary">Get Started</a>
+
+        </div>
+      </section>
+
+        <!-- - #BLOG -->
+       <!-- <section class="section blog" id="blog" aria-label="blog">
+        <div class="container">
+
+          <h2 class="h2 section-title">Latest Articles Updated Weekly</h2>
+
+          <p class="section-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna
+            aliqua.
+          </p>
+          <ul class="grid-list">
+            <li>
+              <div class="blog-card">
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="./assets/images/blog-1.jpg" width="860" height="646" loading="lazy"
+                    alt="How to Become a Successful Entry Level UX Designer" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">How to Become a Successful Entry Level UX Designer</a>
+                  </h3>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card grid">
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="./assets/images/blog-2.jpg" width="860" height="646" loading="lazy"
+                    alt="2022 Local SEO Success: The Year of Everywhere" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">2022 Local SEO Success: The Year of Everywhere</a>
+                  </h3>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card grid">
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="./assets/images/blog-3.jpg" width="860" height="646" loading="lazy"
+                    alt="The Guide to Running a Client Discovery Process" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">The Guide to Running a Client Discovery Process</a>
+                  </h3>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card grid">
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="./assets/images/blog-4.jpg" width="860" height="646" loading="lazy"
+                    alt="3 Ways to Get Client Approval for Scope Changes" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">3 Ways to Get Client Approval for Scope Changes</a>
+                  </h3>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card grid">
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="./assets/images/blog-5.jpg" width="860" height="646" loading="lazy"
+                    alt="Top 21 Must-Read Blogs For Creative Agencies" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Top 21 Must-Read Blogs For Creative Agencies</a>
+                  </h3>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section> -->
+
+
+
+
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact" id="contact" aria-label="contact">
+        <div class="container">
+          
+
+          <h2 class="h2 section-title">Contact  Us</h2>
+
+          <p class="section-text">
+            Let's talk about Your Website or Project, Send Us a message and we will be in touch within one business day.
+          <form action="" class="contact-form">
+
+          
+            <div class="input-wrapper">
+              <input type="text" name="name" aria-label="name" placeholder="Your name*" required class="input-field">
+
+              <input type="email" name="email_address" aria-label="email" placeholder="Email address*" required
+                class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <input type="text" name="subject" aria-label="subject" placeholder="Subject" class="input-field">
+
+              <input type="number" name="phone" aria-label="phone" placeholder="Phone number" class="input-field">
+            </div>
+
+            <textarea name="message" aria-label="message" placeholder="Your message...*" required
+              class="input-field"></textarea>
+
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name="terms_and_policy" id="terms" required class="checkbox">
+
+              <label for="terms" class="label">
+                Accept <a href="#" class="label-link">Terms of Services</a> and <a href="#" class="label-link">Privacy
+                  Policy</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+
+          </form>
+
+          <ul class="contact-list">
+
+            <li class="contact-item">
+              <div class="contact-card tossing">
+
+                <div class="card-icon">
+                  <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Mail Us</h3>
+
+                  <a href="mailto:hello@luaz.com" class="card-link">info@levicent.com</a>
+                  <a href="mailto:info@luaz.com" class="card-link">admin@levicent.com</a>
+
+                </div>
+
+              </div>
+            </li>
+            <style>
+             
+            </style>
+
+            <li class="contact-item">
+              <div class="contact-card tossing">
+
+                <div class="card-icon">
+                  <ion-icon name="map-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Visit Us</h3>
+
+                  <address class="card-address">
+                    5,Annamalai Nagar, <br>Tiruvannamalai<br> Tamil Nadu 606603.
+                  </address>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-card tossing">
+
+                <div class="card-icon">
+                  <ion-icon name="headset-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Call Us</h3>
+
+                  <a href="tel:+1234567890" class="card-link">+91 8667532734</a>
+                
+                  <a href="tel:+2414524526" class="card-link">+91 9566559159</a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" aria-label="back to top" data-back-top-btn class="back-top-btn">
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  
+
+
+
+
+
+  <footer>
+<svg viewBox="0 0 120 28">
+ <defs> 
+   <mask id="xxx">
+     <circle cx="7" cy="12" r="40" fill="#fff" />
+   </mask>
+   
+   <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="
+           1 0 0 0 0  
+           0 1 0 0 0  
+           0 0 1 0 0  
+           0 0 0 13 -9" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+  	</filter>
+     <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+  </defs> 
+
+   <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
+   <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
+ 
+  <g class="gooeff">
+  <circle class="drop drop1" cx="20" cy="2" r="1.8"  />
+  <circle class="drop drop2" cx="25" cy="2.5" r="1.5"  />
+  <circle class="drop drop3" cx="16" cy="2.8" r="1.2"  />
+    <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+  
+  
+
+</svg>
+
+  <!--div>&copy; 2024 All Rights Reserved by Levicent .</div-->
+  <div>© 2024 Levicent Ltd. All rights reserved.</div>
+
+</footer>
+
+
+
+
+  
+
+<script>
+  var tl = gsap.timeline({ repeat: -1 });
+  tl.to("h1", 30, { backgroundPosition: "-960px 0" });
+</script>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="//code.tidio.co/gkn0optrsc7se8zxajowwff0b0fv8umq.js" async></script>
+
+</body>
+
+</html>
